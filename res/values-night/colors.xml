@@ -41,4 +41,7 @@
     <color name="divider_color">@color/white_14_alpha</color>
 
     <color name="cover_title_color">@color/white_88_alpha</color>
+
+    <color name="color_primary">@*android:color/primary_device_default_settings</color>
+    <color name="color_primary_dark">@*android:color/primary_dark_device_default_settings</color>
 </resources>
