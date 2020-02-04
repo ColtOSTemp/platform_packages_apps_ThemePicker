@@ -62,7 +62,6 @@ import com.android.customization.picker.theme.ThemePreviewPage.TimeContainer;
 import com.android.customization.widget.OptionSelectorController;
 import com.android.wallpaper.R;
 import com.android.wallpaper.asset.Asset;
-import com.android.wallpaper.asset.Asset.CenterCropBitmapTask;
 import com.android.wallpaper.model.WallpaperInfo;
 import com.android.wallpaper.module.CurrentWallpaperInfoFactory;
 import com.android.wallpaper.module.InjectorProvider;
@@ -612,9 +611,7 @@ public class ThemeFragment extends ToolbarFragment {
                     if (wallpaperPreviewAsset != null) {
                         wallpaperPreviewAsset.decodeBitmap(
                                 targetWidth, targetHeight,
-                                bitmap -> new CenterCropBitmapTask(bitmap, view,
-                                        croppedBitmap -> setWallpaperBitmap(view, croppedBitmap))
-                                .execute());
+                                bitmap -> setWallpaperBitmap(view, bitmap));
                     }
                     view.removeOnLayoutChangeListener(this);
                 }
